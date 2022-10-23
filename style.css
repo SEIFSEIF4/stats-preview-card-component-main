@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/* Variables */
+:root {
+	/* Primary */
+	--mainBackground-color: hsl(233, 47%, 7%);
+	--DarkDesaturated-color: hsl(244, 38%, 16%);
+	--accent-color: hsl(277, 64%, 61%);
+	/* Neutral */
+	--VeryPaleBlue-color: hsl(225, 100%, 98%);
+	--White-color: hsl(0, 0%, 100%);
+	--mainParagraph-color: hsla(0, 0%, 100%, 0.75);
+	--statHeadings-color: hsla(0, 0%, 100%, 0.6);
+	/* Font */
+	--Body-font-size: 15px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
+	background-color: var(--mainBackground-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 60rem;
+	background-color: var(--DarkDesaturated-color);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	overflow: hidden;
+	border-radius: 0.625rem;
+	margin: 1rem;
+}
+
+.container .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding-right: 1rem;
+}
+
+.container .text h1 {
+	color: var(--VeryPaleBlue-color);
+	padding: 0 2.1875rem;
+}
+.container .text span {
+	color: var(--accent-color);
+}
+
+.container .text p {
+	color: var(--mainParagraph-color);
+	padding: 0 2.1875rem;
+}
+/*===========================*/
+.container .stats .box {
+	position: relative;
+	padding: 5px;
+	color: var(--statHeadings-color);
+}
+.container .stats .box h2 {
+	font-size: 22px;
+	color: white;
+	margin-top: 0.3125rem;
+	text-align: center;
+}
+.container .stats .box p {
+	text-transform: uppercase;
+}
+
+@media (width>=769) {
+	.container .stats {
+		display: flex;
+	}
+}
+
+/*===========================*/
+.container .hero {
+	position: relative;
+}
+.container .hero img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0 0.625rem 0.625rem 0;
+}
+
+.container .hero::after {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #8912d3;
+	border-radius: 0 var(--br) var(--br) 0;
+	opacity: 0.5;
+}
+
+@media (width<=768px) {
+	.container {
+		display: flex;
+		margin: 1.25rem;
+		flex-direction: column-reverse;
+		flex-wrap: wrap;
+		max-width: 19.125rem;
+	}
+	.container .hero {
+		border-radius: 0.625rem 0.625rem 0 0;
+		display: block;
+	}
+	.container .text {
+		text-align: center;
+		padding: 1rem;
+	}
+	.container .text h1 {
+		margin-top: 10px;
+		font-size: 22px;
+	}
+	.container .text p {
+		font-size: 11px;
+		line-height: 1.5;
+		opacity: 0.8;
+	}
+	.container .text .stats {
+		flex-direction: column;
+	}
+	.container .text .stats .box {
+	}
+}
